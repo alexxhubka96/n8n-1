@@ -14,7 +14,7 @@
 N8N_BASIC_AUTH_ACTIVE=true
 N8N_BASIC_AUTH_USER=admin
 N8N_BASIC_AUTH_PASSWORD=yourpassword
-TZ=Europe/Moscow
+TZ=America/Los_Angeles
 ```
 
 4. Done! Use the deployed URL to access n8n.
