@@ -1,11 +1,13 @@
-FROM n8nio/n8n
+# Базовый образ от n8n
+FROM n8nio/n8n:latest
 
 # Устанавливаем ffmpeg и instaloader
 USER root
-RUN apt update && apt install -y ffmpeg python3-pip && pip3 install instaloader
 
-# Возвращаемся к n8n-пользователю
+RUN apt-get update && \
+    apt-get install -y ffmpeg python3-pip && \
+    pip3 install instaloader && \
+    apt-get clean && rm -rf /var/lib/apt/lists/*
+
+# Возвращаемся к пользователю node для безопасности
 USER node
-
-# Запуск n8n
-CMD ["n8n"]
